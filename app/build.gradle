@@ -24,6 +24,10 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
 
+    // Butter knife
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+
     // Expresso
     compile 'com.android.support:support-annotations:22.2.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

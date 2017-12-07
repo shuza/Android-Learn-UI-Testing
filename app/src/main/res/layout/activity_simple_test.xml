@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context="me.shuza.android_learn_ui_testing.SimpleTestActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvCounterResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnIncreaseCounter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Increase Counter"
+        android:textAllCaps="false" />
+
+</LinearLayout>
