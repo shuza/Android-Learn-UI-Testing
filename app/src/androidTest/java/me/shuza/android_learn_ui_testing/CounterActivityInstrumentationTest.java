@@ -32,4 +32,11 @@ public class CounterActivityInstrumentationTest {
         onView(withId(R.id.btnIncreaseCounter)).perform(click());
         onView(withId(R.id.tvCounterResult)).check(matches(withText(String.valueOf(++count))));
     }
+
+    @Test
+    public void validateCounterResultBusinessLogic() {
+        int count = 0;
+        onView(withId(R.id.btnIncreaseCounter)).perform(click());
+        onView(withId(R.id.tvCounterResult)).check(matches(withText(String.valueOf(count))));
+    }
 }
