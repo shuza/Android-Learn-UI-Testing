@@ -23,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnSimpleTestActivity)
     public void startSimpleTestActivity(View view) {
-        startActivity(new Intent(MainActivity.this, SimpleTestActivity.class));
+        startActivity(new Intent(MainActivity.this, CounterActivity.class));
     }
 }

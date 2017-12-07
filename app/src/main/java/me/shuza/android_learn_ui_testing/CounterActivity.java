@@ -9,7 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SimpleTestActivity extends AppCompatActivity {
+public class CounterActivity extends AppCompatActivity {
     @BindView(R.id.tvCounterResult)
     TextView tvCounterResult;
 
