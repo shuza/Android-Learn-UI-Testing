@@ -1,29 +1,25 @@
 package me.shuza.android_learn_ui_testing;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import me.shuza.android_learn_ui_testing.databinding.ActivitySimpleTestBinding;
+
 
 public class CounterActivity extends AppCompatActivity {
-    @BindView(R.id.tvCounterResult)
-    TextView tvCounterResult;
-
+    ActivitySimpleTestBinding binding;
     int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_test);
-        ButterKnife.bind(this);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_simple_test);
+        binding.btnIncreaseCounter.setOnClickListener((v) -> increaseCounter());
     }
 
-    @OnClick(R.id.btnIncreaseCounter)
-    public void increaseCounter(View view) {
-        tvCounterResult.setText(String.valueOf(++count));
+    public void increaseCounter() {
+        binding.tvCounterResult.setText(String.valueOf(++count));
     }
 }

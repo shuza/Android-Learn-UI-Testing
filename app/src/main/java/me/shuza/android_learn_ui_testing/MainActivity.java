@@ -1,28 +1,29 @@
 package me.shuza.android_learn_ui_testing;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import me.shuza.android_learn_ui_testing.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.btnSimpleTestActivity)
-    Button btnSimpleTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.btnSimpleTestActivity.setOnClickListener((v)-> startSimpleTestActivity());
+        binding.btnListViewTestActivity.setOnClickListener((v)-> startListTestActivity());
+
     }
 
-    @OnClick(R.id.btnSimpleTestActivity)
-    public void startSimpleTestActivity(View view) {
-        startActivity(new Intent(MainActivity.this, CounterActivity.class));
+    private void startListTestActivity() {
+        startActivity(new Intent(this, ListUIActivity.class));
+    }
+
+    public void startSimpleTestActivity() {
+        startActivity(new Intent(this, CounterActivity.class));
     }
 }
