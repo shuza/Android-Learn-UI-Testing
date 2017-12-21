@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,6 +49,8 @@ public class ListUIActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.binding.tvListItemName.setText(names.get(position));
+            holder.binding.tvListItemName.setOnClickListener((v) ->
+                    Toast.makeText(ListUIActivity.this, names.get(position), Toast.LENGTH_SHORT).show());
         }
 
         @Override
